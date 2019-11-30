@@ -19,7 +19,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/log_uncor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -40,7 +40,7 @@
         android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/pass_uncorr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -48,5 +48,6 @@
         android:id="@+id/reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Зарегистрироваться" />
+        android:text="Зарегистрироваться"
+        android:onClick="onRegButtonClick"/>
 </LinearLayout>

@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void onRegisterButtonClick(View v){
-        Intent i = new Intent(MainActivity.this, )
+        Intent i = new Intent(MainActivity.this, Register_activity.class);
+        startActivity(i);
     }
     public void OnEnterButtonClick(View v){
-        String login = ((EditText) findViewById(R.id.log)).toString();
-        String password = ((EditText)findViewById(R.id.pass)).toString();
+        String login = ((EditText) findViewById(R.id.log)).getText().toString();
+        String password = ((EditText)findViewById(R.id.pass)).getText().toString();
     }
 }
