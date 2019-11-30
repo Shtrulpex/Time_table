@@ -50,4 +50,11 @@
         android:layout_height="wrap_content"
         android:text="Зарегистрироваться"
         android:onClick="onRegButtonClick"/>
+
+    <Button
+        android:id="@+id/ret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вернуться"
+        android:onClick="onRetButtonClick"/>
 </LinearLayout>
