@@ -43,7 +43,8 @@
     <TextView
         android:id="@+id/uncorrect"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#E92828"/>
 
     <Button
         android:id="@+id/button2"

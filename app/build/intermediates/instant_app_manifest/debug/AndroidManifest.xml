@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.hard.Time_table_activity" />
+        <activity android:name="com.example.hard.reg_activity" />
     </application>
 
 </manifest>

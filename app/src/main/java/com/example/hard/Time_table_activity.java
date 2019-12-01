@@ -5,10 +5,14 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_activity extends AppCompatActivity {
+
+    DBHelper_days dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_table_activity);
-
     }
+
+
 }

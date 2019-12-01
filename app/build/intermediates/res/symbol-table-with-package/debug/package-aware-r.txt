@@ -759,6 +759,8 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id editText
+id editText2
 id edit_query
 id end
 id enter
@@ -856,6 +858,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView2
+id textView3
 id time
 id title
 id titleDividerNoCustom
