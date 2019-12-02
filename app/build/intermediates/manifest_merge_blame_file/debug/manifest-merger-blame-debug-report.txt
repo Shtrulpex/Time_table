@@ -11,7 +11,7 @@
 9-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:5:5-21:19
+11-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:5:5-22:19
 12        android:allowBackup="true"
 12-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -42,12 +42,15 @@
 25-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:16:27-74
 26            </intent-filter>
 27        </activity>
-28        <activity android:name="com.example.hard.Time_table_activity" />
-28-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:19:9-66
-28-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:19:19-54
-29        <activity android:name="com.example.hard.reg_activity" />
-29-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:20:9-58
-29-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:20:19-46
-30    </application>
-31
-32</manifest>
+28        <activity android:name="com.example.hard.Time_table_create_activity" />
+28-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:19:9-73
+28-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:19:19-61
+29        <activity android:name="com.example.hard.Time_table_activity" />
+29-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:20:9-66
+29-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:20:19-54
+30        <activity android:name="com.example.hard.reg_activity" />
+30-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:21:9-58
+30-->D:\Samsung\GitHub\Time_table\app\src\main\AndroidManifest.xml:21:19-46
+31    </application>
+32
+33</manifest>

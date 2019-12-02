@@ -1,4 +1,4 @@
-#Sun Dec 01 15:27:49 GMT+03:00 2019
+#Mon Dec 02 17:09:30 GMT+03:00 2019
 base.0=D\:\\Samsung\\GitHub\\Time_table\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

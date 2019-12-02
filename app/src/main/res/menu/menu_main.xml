@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Time_table_create_activity">
+
+
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w1"
+        android:title="@string/item1"
+        app:showAsAction="never" />
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w2"
+        android:title="@string/item2"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w3"
+        android:title="@string/item3"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w4"
+        android:title="@string/item4"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w5"
+        android:title="@string/item5"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w6"
+        android:title="@string/item6"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:id="@+id/w7"
+        android:title="@string/item7"
+        app:showAsAction="never"/>
+</menu>
