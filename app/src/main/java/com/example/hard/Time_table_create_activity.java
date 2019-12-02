@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,49 +56,46 @@ public class Time_table_create_activity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        return true;
+    public void w1(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 1;
+        weekd.setText("Понедельник");
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
+    public void w2(View v){
         TextView weekd = (TextView)findViewById(R.id.textView6);
-        switch(id){
-            case R.id.w1:
-                weekday = 1;
-                weekd.setText("Понедельник");
-                break;
-            case R.id.w2:
-                weekday = 2;
-                weekd.setText("Вторник");
-                break;
-            case R.id.w3:
-                weekday = 3;
-                weekd.setText("Среда");
-                break;
-            case R.id.w4:
-                weekday = 4;
-                weekd.setText("Четверг");
-                break;
-            case R.id.w5:
-                weekday = 5;
-                weekd.setText("Пятница");
-                break;
-            case R.id.w6:
-                weekday = 6;
-                weekd.setText("Суббота");
-                break;
-            case R.id.w7:
-                weekday = 7;
-                weekd.setText("Воскресенье");
-                break;
-        }
+        weekday = 2;
+        weekd.setText("Вторник");
+    }
 
-        return onOptionsItemSelected(item);
+    public void w3(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 3;
+        weekd.setText("Среда");
+    }
+
+    public void w4(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 4;
+        weekd.setText("Четверг");
+    }
+
+    public void w5(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 5;
+        weekd.setText("Пятница");
+    }
+
+    public void w6(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 6;
+        weekd.setText("Суббота");
+    }
+
+    public void w7(View v){
+        TextView weekd = (TextView)findViewById(R.id.textView6);
+        weekday = 7;
+        weekd.setText("Воскресенье");
     }
 
     public void b1(View v){
@@ -107,6 +106,8 @@ public class Time_table_create_activity extends AppCompatActivity {
 
         MainActivity mainActivity = new MainActivity();
         CheckBox check = (CheckBox)findViewById(R.id.switch2);
+
+
         int startH = Integer.parseInt(((EditText)findViewById(R.id.hour_start)).getText().toString());
         int startM = Integer.parseInt(((EditText)findViewById(R.id.min_start)).getText().toString());
         int endH = Integer.parseInt(((EditText)findViewById(R.id.hour_end)).getText().toString());
@@ -136,16 +137,16 @@ public class Time_table_create_activity extends AppCompatActivity {
         contentValues.put(DBHelper_days.KEY_EVENT, event);
         contentValues.put(DBHelper_days.KEY_REPEAT, repeat);
 
-        if(cursor.moveToLast()){
-            if(mainActivity.n){
+        if(mainActivity.n){
+                Log.d("m_Log", "n = true");
                 int updCount =  db.update(DBHelper_days.TABLE_CONTACTS, contentValues, DBHelper_days.KEY_ID + "= ?", new String[]{} );
                 mainActivity.n=false;
             } else{
+                Log.d("m_Log", "n = false");
                 db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
             }
-            cursor.close();
-            finish();
-        }
+        cursor.close();
+        finish();
     }
 
 }

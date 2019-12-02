@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -61,24 +62,13 @@ public class MainActivity  extends AppCompatActivity {
                         contentValues.put(DBHelper_days.KEY_LOGIN, login);
 
                         if (smt.equals(login)) {
-                            n=false;
+                            n=true;
+                            Log.d("m_Log", "n = false");
                         } else {
                             db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-                            n = true;
+                            n = false;
+                            Log.d("m_Log", "n = true");
                         }
-
-                       /* if(smt==null){
-                            db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-                        }else if(ev==null){
-                           int updCount =  db.update(DBHelper_days.TABLE_CONTACTS, contentValues, DBHelper_days.KEY_ID + "= ?", new String[]{} );
-                        } else{
-                            db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-                        }
-                    } else{
-                        contentValues.put(DBHelper_days.KEY_LOGIN, login);
-                        db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-                    }*/
-
                         Intent i = new Intent(MainActivity.this, Time_table_create_activity.class);
                         startActivity(i);
                     } else d++;

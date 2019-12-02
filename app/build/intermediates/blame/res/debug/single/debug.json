@@ -1596,10 +1596,6 @@
         "source": "C:\\Users\\MR Brown\\.gradle\\caches\\transforms-2\\files-2.1\\37ec02f661e3547c5499ecdfd9f3cd1f\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\Samsung\\GitHub\\Time_table\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
-        "source": "D:\\Samsung\\GitHub\\Time_table\\app\\src\\main\\res\\menu\\menu_main.xml"
-    },
-    {
         "merged": "D:\\Samsung\\GitHub\\Time_table\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\MR Brown\\.gradle\\caches\\transforms-2\\files-2.1\\37ec02f661e3547c5499ecdfd9f3cd1f\\appcompat-1.1.0\\res\\anim\\abc_popup_exit.xml"
     },
