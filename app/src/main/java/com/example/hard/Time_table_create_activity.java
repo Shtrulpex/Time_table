@@ -1,21 +1,15 @@
 package com.example.hard;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_create_activity extends AppCompatActivity {
@@ -104,7 +98,6 @@ public class Time_table_create_activity extends AppCompatActivity {
 
     public void onSubButtonClick(View v){
 
-        MainActivity mainActivity = new MainActivity();
         CheckBox check = (CheckBox)findViewById(R.id.switch2);
 
 
@@ -123,9 +116,14 @@ public class Time_table_create_activity extends AppCompatActivity {
         ContentValues contentValues = new ContentValues();
         Cursor cursor = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
 
-        if(cursor.moveToLast()){
-           int logIndex = cursor.getColumnIndex(DBHelper_days.KEY_LOGIN);
-           login = cursor.getString(logIndex);
+        DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
+        SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
+        ContentValues contentValues1 = new ContentValues();
+        Cursor cursor1 = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
+
+        if(cursor1.moveToLast()){
+           int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
+           login = cursor1.getString(logIndex);
         }
 
         contentValues.put(DBHelper_days.KEY_LOGIN, login);
@@ -137,14 +135,8 @@ public class Time_table_create_activity extends AppCompatActivity {
         contentValues.put(DBHelper_days.KEY_EVENT, event);
         contentValues.put(DBHelper_days.KEY_REPEAT, repeat);
 
-        if(mainActivity.n){
-                Log.d("m_Log", "n = true");
-                int updCount =  db.update(DBHelper_days.TABLE_CONTACTS, contentValues, DBHelper_days.KEY_ID + "= ?", new String[]{} );
-                mainActivity.n=false;
-            } else{
-                Log.d("m_Log", "n = false");
-                db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-            }
+        db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
+
         cursor.close();
         finish();
     }

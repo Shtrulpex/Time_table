@@ -3,31 +3,31 @@
 3    package="com.example.hard.test" >
 4
 5    <uses-sdk
-5-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:5:5-74
+5-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:5:5-74
 6        android:minSdkVersion="15"
-6-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:5:15-41
+6-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:5:42-71
+7-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:11:5-15:66
+9-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:11:5-15:66
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:11:22-76
+10-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:11:22-76
 11        android:functionalTest="false"
-11-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:14:22-52
+11-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:13:22-53
+12-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:13:22-53
 13        android:label="Tests for com.example.hard"
-13-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:15:22-64
+13-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:15:22-64
 14        android:targetPackage="com.example.hard" />
-14-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:12:22-62
+14-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:12:22-62
 15
 16    <application android:debuggable="true" >
-16-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:7:5-9:19
-16-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:7:18-43
+16-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:7:5-9:19
+16-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:7:18-43
 17        <uses-library android:name="android.test.runner" />
-17-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:8:9-60
-17-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger871596089615108550.xml:8:23-57
+17-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:8:9-60
+17-->D:\Samsung\GitHub\Time_table\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5714424039525037044.xml:8:23-57
 18    </application>
 19
 20</manifest>

@@ -13,9 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class MainActivity  extends AppCompatActivity {
-    int d = 0;
-    boolean n;
+public class Sign_in_activity extends AppCompatActivity {
+
     DBHelper_auth dbHelper;
 
     @Override
@@ -23,11 +22,26 @@ public class MainActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*dbHelper = new DBHelper_auth(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(DBHelper_auth.TABLE_CONTACTS, null, null);*/
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EditText log = (EditText) findViewById(R.id.log);
+        EditText pass = (EditText) findViewById(R.id.pass);
+        TextView uncorrect = (TextView) findViewById(R.id.uncorrect);
+        log.setText("");
+        pass.setText("");
+        uncorrect.setText("");
+    }
+
+
     public void onRegisterButtonClick(View v) {
-        Intent i = new Intent(MainActivity.this, reg_activity.class);
+        Intent i = new Intent(Sign_in_activity.this, reg_activity.class);
         startActivity(i);
     }
 
@@ -48,41 +62,25 @@ public class MainActivity  extends AppCompatActivity {
             int loginIndex = cursor.getColumnIndex(DBHelper_auth.KEY_LOGIN);
             int passswordIndex = cursor.getColumnIndex(DBHelper_auth.KEY_PASSWORD);
             do {
-                if (cursor.getString(loginIndex).equals(login) && cursor.getString(passswordIndex).equals(password)) {
-                    cursor.close();
 
-                    SQLiteDatabase db1 = dbHelper.getWritableDatabase();
+                if (cursor.getString(loginIndex).equals(login) && cursor.getString(passswordIndex).equals(password)) {
+                    DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
+                    SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
                     ContentValues contentValues = new ContentValues();
                     Cursor cursor1 = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
 
                     if (cursor1.moveToLast()) {
-                        int logIndex = cursor1.getColumnIndex(DBHelper_days.KEY_LOGIN);
-                        int evIndex = cursor1.getColumnIndex(DBHelper_days.KEY_EVENT);
-                        String smt = cursor1.getString(logIndex);
-                        contentValues.put(DBHelper_days.KEY_LOGIN, login);
-
-                        if (smt.equals(login)) {
-                            n=true;
-                            Log.d("m_Log", "n = false");
-                        } else {
-                            db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
-                            n = false;
-                            Log.d("m_Log", "n = true");
-                        }
-                        Intent i = new Intent(MainActivity.this, Time_table_create_activity.class);
+                        contentValues.put(DBHelper_logDb.KEY_LOGIN, login);
+                        db1.insert(DBHelper_logDb.TABLE_CONTACTS, null, contentValues);
+                        Intent i = new Intent(Sign_in_activity.this, Time_table_activity.class);
                         startActivity(i);
-                    } else d++;
+                    }
                 }
-            }
-                while (cursor.moveToNext()) ;
-
-        }
-            if (d == cursor.getCount()) {
-                log.setText("");
-                pass.setText("");
-                uncorrect.setText("Неверный логин или пароль");
-                d = 0;
-            }
+            } while (cursor.moveToNext()) ;
+            log.setText("");
+            pass.setText("");
+            uncorrect.setText("Неверный логин или пароль");
         }
     }
+}
 
