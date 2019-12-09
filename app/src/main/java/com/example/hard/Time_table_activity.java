@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_activity extends AppCompatActivity {
 
-    DBHelper_days dbHelper;
+    DBHelper_days dbHelper_days;
     int weekd = 1;
     String login, event;
     LinearLayout eventSheet;
@@ -28,17 +28,17 @@ public class Time_table_activity extends AppCompatActivity {
 
         Log.d("Log_d", "hi");
 
-        dbHelper = new DBHelper_days(this);
         eventSheet = (LinearLayout)findViewById(R.id.eventSheet);
 
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        dbHelper_days = new DBHelper_days(this);
+        SQLiteDatabase db = dbHelper_days.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         Cursor cursor = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
 
         DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
         SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
         ContentValues contentValues1 = new ContentValues();
-        Cursor cursor1 = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
+        Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
 
         if(cursor1.moveToLast()){
             int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
@@ -82,10 +82,10 @@ public class Time_table_activity extends AppCompatActivity {
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Понедельник");
         weekd = 1;
-        dbHelper = new DBHelper_days(this);
+        dbHelper_days = new DBHelper_days(this);
         eventSheet = (LinearLayout)findViewById(R.id.eventSheet);
 
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        SQLiteDatabase db = dbHelper_days.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         Cursor cursor = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
 

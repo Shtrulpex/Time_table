@@ -119,13 +119,14 @@ public class Time_table_create_activity extends AppCompatActivity {
         DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
         SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
         ContentValues contentValues1 = new ContentValues();
-        Cursor cursor1 = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
+        Cursor cursor1 = db.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
 
         if(cursor1.moveToLast()){
            int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
            login = cursor1.getString(logIndex);
-        }
+           Log.d("Log_d", "yeah");
 
+        }
         contentValues.put(DBHelper_days.KEY_LOGIN, login);
         contentValues.put(DBHelper_days.KEY_WEEKDAY, weekday);
         contentValues.put(DBHelper_days.KEY_HOURSTART, startH);
@@ -138,7 +139,9 @@ public class Time_table_create_activity extends AppCompatActivity {
         db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
 
         cursor.close();
+        cursor1.close();
         finish();
+
     }
 
 }

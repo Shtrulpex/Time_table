@@ -62,7 +62,6 @@ public class Sign_in_activity extends AppCompatActivity {
             int loginIndex = cursor.getColumnIndex(DBHelper_auth.KEY_LOGIN);
             int passswordIndex = cursor.getColumnIndex(DBHelper_auth.KEY_PASSWORD);
             do {
-
                 if (cursor.getString(loginIndex).equals(login) && cursor.getString(passswordIndex).equals(password)) {
                     DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
                     SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
@@ -74,12 +73,15 @@ public class Sign_in_activity extends AppCompatActivity {
                         db1.insert(DBHelper_logDb.TABLE_CONTACTS, null, contentValues);
                         Intent i = new Intent(Sign_in_activity.this, Time_table_activity.class);
                         startActivity(i);
+                        cursor1.close();
                     }
                 }
             } while (cursor.moveToNext()) ;
             log.setText("");
             pass.setText("");
             uncorrect.setText("Неверный логин или пароль");
+            cursor.close();
+
         }
     }
 }
