@@ -66,7 +66,7 @@ public class Sign_in_activity extends AppCompatActivity {
                     DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
                     SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
                     ContentValues contentValues = new ContentValues();
-                    Cursor cursor1 = db.query(DBHelper_days.TABLE_CONTACTS, null, null, null, null, null, null);
+                    Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
 
                     if (cursor1.moveToLast()) {
                         contentValues.put(DBHelper_logDb.KEY_LOGIN, login);

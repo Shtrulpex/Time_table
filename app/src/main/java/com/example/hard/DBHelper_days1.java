@@ -1,15 +1,14 @@
 package com.example.hard;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DBHelper_days  extends SQLiteOpenHelper{
+public class DBHelper_days1  extends SQLiteOpenHelper{
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "dayDb";
-    public static final String TABLE_CONTACTS = "contacts";
+    public static final String DATABASE_NAME = "daysDb";
+    public static final String TABLE_DAYS = "days";
 
     public static final String KEY_ID = "_id";
     public static final String KEY_WEEKDAY = "weekday";
@@ -22,23 +21,28 @@ public class DBHelper_days  extends SQLiteOpenHelper{
     public static final String KEY_REPEAT = "repeat";
     public static final String KEY_LOGIN = "login";
 
-    public DBHelper_days(Context context) {
+    public DBHelper_days1(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_CONTACTS + "(" + KEY_ID
-                + " integer primary key," + KEY_LOGIN + "text," + KEY_WEEKDAY + " integer," + KEY_HOURSTART + " integer," + KEY_MINSTART + "integer," + KEY_HOURSTOP + "integer," + KEY_MINSTOP + "integer," + KEY_EVENT + "text," + KEY_NOTE + "text," + KEY_REPEAT + "integer" + ")");
+        db.execSQL("create table " + TABLE_DAYS + "(" + KEY_ID
+                + " INTEGER primary key," + KEY_LOGIN
+                + " TEXT," + KEY_EVENT
+                + " TEXT,"+ KEY_HOURSTART
+                + " INTEGER," + KEY_HOURSTOP
+                + " INTEGER," + KEY_MINSTART
+                + " INTEGER," + KEY_MINSTOP
+                + " INTEGER," + KEY_WEEKDAY
+                + " INTEGER," + KEY_REPEAT
+                + " INTEGER," + KEY_NOTE + "TEXT" + ")");
 
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DBHelper_days.KEY_LOGIN, "123");
-        db.insert(DBHelper_days.TABLE_CONTACTS, null, contentValues);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists " + TABLE_CONTACTS);
+        db.execSQL("drop table if exists " + TABLE_DAYS);
 
         onCreate(db);
 
