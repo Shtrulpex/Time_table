@@ -12,13 +12,13 @@ public class DBHelper_days1  extends SQLiteOpenHelper{
 
     public static final String KEY_ID = "_id";
     public static final String KEY_WEEKDAY = "weekday";
-    public static final String KEY_HOURSTART = "hourstart";
-    public static final String KEY_HOURSTOP = "hourstop";
+    public static final String KEY_HOURSTART = "hourst";
+    public static final String KEY_HOURSTOP = "hours";
     public static final String KEY_MINSTART = "minstart";
-    public static final String KEY_MINSTOP = "minstop";
+    public static final String KEY_MINSTOP = "minsto";
     public static final String KEY_EVENT = "event";
     public static final String KEY_NOTE = "note";
-    public static final String KEY_REPEAT = "repeat";
+    public static final String KEY_REP = "rep";
     public static final String KEY_LOGIN = "login";
 
     public DBHelper_days1(Context context) {
@@ -35,7 +35,7 @@ public class DBHelper_days1  extends SQLiteOpenHelper{
                 + " INTEGER," + KEY_MINSTART
                 + " INTEGER," + KEY_MINSTOP
                 + " INTEGER," + KEY_WEEKDAY
-                + " INTEGER," + KEY_REPEAT
+                + " INTEGER," + KEY_REP
                 + " INTEGER," + KEY_NOTE + "TEXT" + ")");
 
     }

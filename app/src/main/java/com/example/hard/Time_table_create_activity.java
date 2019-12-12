@@ -131,7 +131,7 @@ public class Time_table_create_activity extends AppCompatActivity {
         contentValues.put(DBHelper_days1.KEY_HOURSTOP, endH);
         contentValues.put(DBHelper_days1.KEY_MINSTOP, endM);
         contentValues.put(DBHelper_days1.KEY_EVENT, event);
-        contentValues.put(DBHelper_days1.KEY_REPEAT, repeat);
+        contentValues.put(DBHelper_days1.KEY_REP, repeat);
 
         db.insert(DBHelper_days1.TABLE_DAYS, null, contentValues);
 
