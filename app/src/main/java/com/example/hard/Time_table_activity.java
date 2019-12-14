@@ -27,56 +27,64 @@ public class Time_table_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_table_activity);
 
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         Log.d("Log_d", "hi");
 
-        eventSheet = (LinearLayout)findViewById(R.id.eventSheet);
+        try {
+            eventSheet = (LinearLayout) findViewById(R.id.eventSheet);
+            dbHelper_days1 = new DBHelper_days1(this);
+            SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
 
-        dbHelper_days1 = new DBHelper_days1(this);
-        SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
+            dbHelper_logDb = new DBHelper_logDb(this);
+            SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
+            ContentValues contentValues1 = new ContentValues();
+            Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
 
-        dbHelper_logDb = new DBHelper_logDb(this);
-        SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
-        ContentValues contentValues1 = new ContentValues();
-        Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
+            if (cursor1.moveToLast()) {
+                int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
+                login = cursor1.getString(logIndex);
+                Log.d("Log_d", "I'me");
+            }
 
-        if(cursor1.moveToLast()){
-            int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
-            login = cursor1.getString(logIndex);
-            Log.d("Log_d", "I'me");
+            if (cursor.moveToFirst()) {
+                int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
+                int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
+                int startHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTART);
+                int startMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTART);
+                int finishHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTOP);
+                int finishMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTOP);
+                int eventIndex = cursor.getColumnIndex(DBHelper_days1.KEY_EVENT);
+                Log.d("Log_d", "working");
+                do {
+                    Log.d("Log_d", "here");
+                    if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex)) {
+
+
+                        startH = cursor.getInt(startHIndex);
+                        finishH = cursor.getInt(finishHIndex);
+                        startM = cursor.getInt(startMIndex);
+                        finishM = cursor.getInt(finishMIndex);
+                        event = cursor.getString(eventIndex);
+
+                        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        TextView tw = new TextView(this);
+                        tw.setText(startH);
+                        eventSheet.addView(tw, lParams);
+
+                    }
+                } while (cursor.moveToNext());
+            }
+        }catch(Exception e){
+
         }
-
-        if(cursor.moveToFirst()){
-            int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
-            int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
-            int startHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTART);
-            int startMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTART);
-            int finishHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTOP);
-            int finishMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTOP);
-            int eventIndex = cursor.getColumnIndex(DBHelper_days1.KEY_EVENT);
-            Log.d("Log_d", "working");
-            do{
-                Log.d("Log_d", "here");
-                if(login.equals(cursor.getString(logIndex))&&weekd==cursor.getInt(dayIndex)){
-
-
-
-                    startH = cursor.getInt(startHIndex);
-                    finishH = cursor.getInt(finishHIndex);
-                    startM = cursor.getInt(startMIndex);
-                    finishM = cursor.getInt(finishMIndex);
-                    event = cursor.getString(eventIndex);
-
-                    LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    TextView tw = new TextView(this);
-                    tw.setText("sshaskdfgasd");
-                    eventSheet.addView(tw, lParams);
-
-                }
-            }while(cursor.moveToNext());
-        }
-
     }
 
     public void mn(View v){

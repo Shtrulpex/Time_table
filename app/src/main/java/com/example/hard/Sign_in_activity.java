@@ -51,30 +51,32 @@ public class Sign_in_activity extends AppCompatActivity {
         TextView uncorrect = (TextView) findViewById(R.id.uncorrect);
         EditText log = (EditText) findViewById(R.id.log);
         EditText pass = (EditText) findViewById(R.id.pass);
-        String login = ((EditText) findViewById(R.id.log)).getText().toString();
-        String password = ((EditText) findViewById(R.id.pass)).getText().toString();
+        String login = (log).getText().toString();
+        String password = (pass).getText().toString();
 
         dbHelper = new DBHelper_auth(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.query(DBHelper_auth.TABLE_CONTACTS, null, null, null, null, null, null);
 
         if (cursor.moveToFirst()) {
+
             int loginIndex = cursor.getColumnIndex(DBHelper_auth.KEY_LOGIN);
             int passswordIndex = cursor.getColumnIndex(DBHelper_auth.KEY_PASSWORD);
             do {
+
                 if (cursor.getString(loginIndex).equals(login) && cursor.getString(passswordIndex).equals(password)) {
                     DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
                     SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
                     ContentValues contentValues = new ContentValues();
                     Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
-
-                    if (cursor1.moveToLast()) {
+                    //if (cursor1.moveToLast()) {
                         contentValues.put(DBHelper_logDb.KEY_LOGIN, login);
                         db1.insert(DBHelper_logDb.TABLE_CONTACTS, null, contentValues);
                         Intent i = new Intent(Sign_in_activity.this, Time_table_activity.class);
+                        Log.d("Log_d", "Enter");
                         startActivity(i);
                         cursor1.close();
-                    }
+                    //}
                 }
             } while (cursor.moveToNext()) ;
             log.setText("");
