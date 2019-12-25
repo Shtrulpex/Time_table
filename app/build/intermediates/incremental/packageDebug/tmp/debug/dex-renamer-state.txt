@@ -1,7 +1,4 @@
-#Wed Dec 25 19:20:06 GMT+03:00 2019
-base.0=C\:\\Users\\student\\Desktop\\IT_School_Samsung_2\\Sibirtsev\\Time_table\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-path.1=classes.dex
-renamed.1=classes2.dex
+#Wed Dec 25 23:25:30 MSK 2019
+base.0=/root/AndroidStudioProjects/Time_table/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\Samsung\\GitHub\\Time_table\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex

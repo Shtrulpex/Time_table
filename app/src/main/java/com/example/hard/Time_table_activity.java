@@ -20,9 +20,7 @@ public class Time_table_activity extends AppCompatActivity {
     String login, event;
     LinearLayout eventSheet;
     int startH, finishH, startM, finishM;
-    DBHelper_logDb dbHelper_logDb;
 
-    Sign_in_activity signed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,58 +36,50 @@ public class Time_table_activity extends AppCompatActivity {
         super.onStart();
         Log.d("Log_d", "hi");
 
-
+        try {
             eventSheet = (LinearLayout) findViewById(R.id.eventSheet);
             dbHelper_days1 = new DBHelper_days1(this);
             SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
 
-            signed = new Sign_in_activity();
-            login = signed.getLog();
 
-           /* dbHelper_logDb = new DBHelper_logDb(this);
-            SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
-            ContentValues contentValues1 = new ContentValues();
-            Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
-
-            if (cursor1.moveToLast()) {
-                int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
-                login = cursor1.getString(logIndex);
-
-            }*/
-
-            //if (cursor.moveToFirst()) {
-
-                int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
-                int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
-                int startHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTART);
-                int startMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTART);
-                int finishHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTOP);
-                int finishMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTOP);
-                int eventIndex = cursor.getColumnIndex(DBHelper_days1.KEY_EVENT);
-
-                Log.d("Log_d", "working");
-                do {
-                    Log.d("Log_d", "here");
-                    if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex)) {
+            login = getIntent().getStringExtra("login");
 
 
-                        startH = cursor.getInt(startHIndex);
-                        finishH = cursor.getInt(finishHIndex);
-                        startM = cursor.getInt(startMIndex);
-                        finishM = cursor.getInt(finishMIndex);
-                        event = cursor.getString(eventIndex);
+            if (cursor.moveToFirst()) {
+            Log.d("Log_d",login);
+            int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
+            int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
+            int startHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTART);
+            int startMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTART);
+            int finishHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTOP);
+            int finishMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTOP);
+            int eventIndex = cursor.getColumnIndex(DBHelper_days1.KEY_EVENT);
 
-                        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                        TextView tw = new TextView(this);
-                        tw.setText("123");
-                        eventSheet.addView(tw, lParams);
+            Log.d("Log_d", "working");
+            do {
+                Log.d("Log_d", "here");
+                if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex)) {
 
-                    }
-                } while (cursor.moveToNext());
-           // }
 
+                    startH = cursor.getInt(startHIndex);
+                    finishH = cursor.getInt(finishHIndex);
+                    startM = cursor.getInt(startMIndex);
+                    finishM = cursor.getInt(finishMIndex);
+                    event = cursor.getString(eventIndex);
+
+                    LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    TextView tw = new TextView(this);
+                    tw.setText("123");
+                    eventSheet.addView(tw, lParams);
+
+                }
+            } while (cursor.moveToNext());
+            }
+        }catch(Exception e){
+
+        }
     }
 
     public void mn(View v){
@@ -139,7 +129,9 @@ public class Time_table_activity extends AppCompatActivity {
     }
 
     public void add_event(View v){
+        login = getIntent().getStringExtra("login");
         Intent i = new Intent(Time_table_activity.this, Time_table_create_activity.class);
+        i.putExtra("login", login);
         startActivity(i);
     }
 

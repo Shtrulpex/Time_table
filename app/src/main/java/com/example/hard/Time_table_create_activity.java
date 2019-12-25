@@ -98,6 +98,8 @@ public class Time_table_create_activity extends AppCompatActivity {
 
     public void onSubButtonClick(View v){
 
+        login = getIntent().getStringExtra("login");
+
         CheckBox check = (CheckBox)findViewById(R.id.switch2);
 
 
@@ -116,14 +118,6 @@ public class Time_table_create_activity extends AppCompatActivity {
         ContentValues contentValues = new ContentValues();
         Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
 
-        DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
-        SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
-        Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
-
-        if(cursor1.moveToLast()){
-           int logIndex = cursor1.getColumnIndex(DBHelper_logDb.KEY_LOGIN);
-           login = cursor1.getString(logIndex);
-        }
         contentValues.put(DBHelper_days1.KEY_LOGIN, login);
         contentValues.put(DBHelper_days1.KEY_WEEKDAY, weekday);
         contentValues.put(DBHelper_days1.KEY_HOURSTART, startH);
@@ -136,7 +130,6 @@ public class Time_table_create_activity extends AppCompatActivity {
         db.insert(DBHelper_days1.TABLE_DAYS, null, contentValues);
 
         cursor.close();
-        cursor1.close();
         finish();
 
     }

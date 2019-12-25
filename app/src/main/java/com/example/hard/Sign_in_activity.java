@@ -75,6 +75,7 @@ public class Sign_in_activity extends AppCompatActivity {
                         db1.insert(DBHelper_logDb.TABLE_CONTACTS, null, contentValues);*/
                         Intent i = new Intent(Sign_in_activity.this, Time_table_activity.class);
                         Log.d("Log_d", "Enter");
+                        i.putExtra("login", login);
                         startActivity(i);
                         //cursor1.close();
                     //}
@@ -88,8 +89,5 @@ public class Sign_in_activity extends AppCompatActivity {
         }
     }
 
-    public String getLog(){
-        return login;
-    }
 }
 
