@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -99,38 +100,43 @@ public class Time_table_create_activity extends AppCompatActivity {
     public void onSubButtonClick(View v){
 
         login = getIntent().getStringExtra("login");
+        try {
 
-        CheckBox check = (CheckBox)findViewById(R.id.switch2);
+
+            CheckBox check = (CheckBox) findViewById(R.id.switch2);
 
 
-        int startH = Integer.parseInt(((EditText)findViewById(R.id.hour_start)).getText().toString());
-        int startM = Integer.parseInt(((EditText)findViewById(R.id.min_start)).getText().toString());
-        int endH = Integer.parseInt(((EditText)findViewById(R.id.hour_end)).getText().toString());
-        int endM = Integer.parseInt(((EditText)findViewById(R.id.min_end)).getText().toString());
-        String event = ((EditText)findViewById(R.id.event)).getText().toString();
+            int startH = Integer.parseInt(((EditText) findViewById(R.id.hour_start)).getText().toString());
+            int startM = Integer.parseInt(((EditText) findViewById(R.id.min_start)).getText().toString());
+            int endH = Integer.parseInt(((EditText) findViewById(R.id.hour_end)).getText().toString());
+            int endM = Integer.parseInt(((EditText) findViewById(R.id.min_end)).getText().toString());
+            String event = ((EditText) findViewById(R.id.event)).getText().toString();
 
-        if(check.isChecked()){
-            repeat = 1;
-        }else repeat = 0;
+            if (check.isChecked()) {
+                repeat = 1;
+            } else repeat = 0;
 
-        dbHelper = new DBHelper_days1(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
+            dbHelper = new DBHelper_days1(this);
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
 
-        contentValues.put(DBHelper_days1.KEY_LOGIN, login);
-        contentValues.put(DBHelper_days1.KEY_WEEKDAY, weekday);
-        contentValues.put(DBHelper_days1.KEY_HOURSTART, startH);
-        contentValues.put(DBHelper_days1.KEY_MINSTART, startM);
-        contentValues.put(DBHelper_days1.KEY_HOURSTOP, endH);
-        contentValues.put(DBHelper_days1.KEY_MINSTOP, endM);
-        contentValues.put(DBHelper_days1.KEY_EVENT, event);
-        contentValues.put(DBHelper_days1.KEY_REP, repeat);
+            contentValues.put(DBHelper_days1.KEY_LOGIN, login);
+            contentValues.put(DBHelper_days1.KEY_WEEKDAY, weekday);
+            contentValues.put(DBHelper_days1.KEY_HOURSTART, startH);
+            contentValues.put(DBHelper_days1.KEY_MINSTART, startM);
+            contentValues.put(DBHelper_days1.KEY_HOURSTOP, endH);
+            contentValues.put(DBHelper_days1.KEY_MINSTOP, endM);
+            contentValues.put(DBHelper_days1.KEY_EVENT, event);
+            contentValues.put(DBHelper_days1.KEY_REP, repeat);
 
-        db.insert(DBHelper_days1.TABLE_DAYS, null, contentValues);
+            db.insert(DBHelper_days1.TABLE_DAYS, null, contentValues);
 
-        cursor.close();
-        finish();
+            cursor.close();
+            finish();
+        }catch (Exception e){
+            Toast.makeText(this, "Вы заполнили не все поля", Toast.LENGTH_LONG).show();
+        }
 
     }
 
