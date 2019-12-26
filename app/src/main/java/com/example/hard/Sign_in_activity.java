@@ -2,7 +2,7 @@ package com.example.hard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,11 +22,6 @@ public class Sign_in_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*dbHelper = new DBHelper_auth(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.delete(DBHelper_auth.TABLE_CONTACTS, null, null);*/
-
     }
 
     @Override
@@ -66,19 +61,11 @@ public class Sign_in_activity extends AppCompatActivity {
             do {
 
                 if (cursor.getString(loginIndex).equals(login) && cursor.getString(passswordIndex).equals(password)) {
-                   /* DBHelper_logDb dbHelper_logDb = new DBHelper_logDb(this);
-                    SQLiteDatabase db1 = dbHelper_logDb.getWritableDatabase();
-                    ContentValues contentValues = new ContentValues();
-                    Cursor cursor1 = db1.query(DBHelper_logDb.TABLE_CONTACTS, null, null, null, null, null, null);
-                    //if (cursor1.moveToLast()) {
-                        contentValues.put(DBHelper_logDb.KEY_LOGIN, login);
-                        db1.insert(DBHelper_logDb.TABLE_CONTACTS, null, contentValues);*/
+                        setContentView(R.layout.time_table_activity);
                         Intent i = new Intent(Sign_in_activity.this, Time_table_activity.class);
                         Log.d("Log_d", "Enter");
                         i.putExtra("login", login);
                         startActivity(i);
-                        //cursor1.close();
-                    //}
                 }
             } while (cursor.moveToNext()) ;
             log.setText("");
