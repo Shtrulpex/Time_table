@@ -30,54 +30,7 @@ public class Time_table_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_table_activity);
 
-        View.OnClickListener onClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {Log.d("Log_d", "+"+v.getId());
-                switch(v.getId()){
-                    case R.id.mn:
-                        break;
-                    case R.id.tu:
-                        break;
-                    case R.id.we:
-                        break;
-                    case R.id.th:
-                        break;
-                    case R.id.fr:
-                        break;
-                    case R.id.st:
-                        break;
-                    case R.id.sn:
-                        break;
-                    default:
-                        login = getIntent().getStringExtra("login");
 
-                        try{
-                            String et = ((EditText)findViewById((v.getId())*100000)).getText().toString();
-
-                            dbHelper_days1 = new DBHelper_days1(Time_table_activity.this);
-                            SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
-                            ContentValues contentValues = new ContentValues();
-                            Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
-
-                            int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
-                            int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
-                            int idIndex = cursor.getColumnIndex(DBHelper_days1.KEY_ID);
-
-                            if(cursor.moveToFirst()) {
-                                do {
-                                    if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex) && cursor.getInt(idIndex)==v.getId()) {
-                                        contentValues.put(DBHelper_days1.KEY_NOTE, et);
-                                        int a = db.update(DBHelper_days1.TABLE_DAYS, contentValues, DBHelper_days1.KEY_ID+"= ?", new String[] {"12"});
-                                    }
-                                } while (cursor.moveToNext());
-                            }
-                        }catch (Exception e){
-                            Toast.makeText(Time_table_activity.this, "Поле пустое", Toast.LENGTH_LONG).show();
-                        }
-                        break;
-                }
-            }
-        };
 
     }
 
@@ -89,7 +42,54 @@ public class Time_table_activity extends AppCompatActivity {
 
         create();
     }
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {Log.d("Log_d", "+"+v.getId());
+            switch(v.getId()){
+                case R.id.mn:
+                    break;
+                case R.id.tu:
+                    break;
+                case R.id.we:
+                    break;
+                case R.id.th:
+                    break;
+                case R.id.fr:
+                    break;
+                case R.id.st:
+                    break;
+                case R.id.sn:
+                    break;
+                default:
+                    login = getIntent().getStringExtra("login");
 
+                    try{
+                        String et = ((EditText)findViewById((v.getId())*100000)).getText().toString();
+
+                        dbHelper_days1 = new DBHelper_days1(Time_table_activity.this);
+                        SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
+                        ContentValues contentValues = new ContentValues();
+                        Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
+
+                        int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
+                        int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
+                        int idIndex = cursor.getColumnIndex(DBHelper_days1.KEY_ID);
+
+                        if(cursor.moveToFirst()) {
+                            do {
+                                if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex) && cursor.getInt(idIndex)==v.getId()) {
+                                    contentValues.put(DBHelper_days1.KEY_NOTE, et);
+                                    int a = db.update(DBHelper_days1.TABLE_DAYS, contentValues, DBHelper_days1.KEY_ID+"= ?", new String[] {"12"});
+                                }
+                            } while (cursor.moveToNext());
+                        }
+                    }catch (Exception e){
+                        Toast.makeText(Time_table_activity.this, "Поле пустое", Toast.LENGTH_LONG).show();
+                    }
+                    break;
+            }
+        }
+    };
     public void mn(View v){
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);

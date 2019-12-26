@@ -102,18 +102,12 @@ public class Time_table_create_activity extends AppCompatActivity {
         try {
 
 
-            CheckBox check = (CheckBox) findViewById(R.id.switch2);
-
-
             int startH = Integer.parseInt(((EditText) findViewById(R.id.hour_start)).getText().toString());
             int startM = Integer.parseInt(((EditText) findViewById(R.id.min_start)).getText().toString());
             int endH = Integer.parseInt(((EditText) findViewById(R.id.hour_end)).getText().toString());
             int endM = Integer.parseInt(((EditText) findViewById(R.id.min_end)).getText().toString());
             String event = ((EditText) findViewById(R.id.event)).getText().toString();
 
-            if (check.isChecked()) {
-                repeat = 1;
-            } else repeat = 0;
 
             dbHelper = new DBHelper_days1(this);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
