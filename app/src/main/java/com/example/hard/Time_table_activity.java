@@ -169,8 +169,9 @@ public class Time_table_activity extends AppCompatActivity {
                         eventSh.addView(tw, lParams);
 
                         try{
+                            String s = cursor.getString(noteIndex);
                             tw = new TextView(this);
-                            tw.setText(cursor.getString(noteIndex));
+                            tw.setText("Заметки: \n"+s);
                             tw.setTextSize(16);
                             eventSh.addView(tw, lParams);
                         }catch(Exception e){

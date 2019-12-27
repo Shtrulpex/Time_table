@@ -36,7 +36,6 @@ public class change_activity extends AppCompatActivity {
 
         if(cursor.moveToFirst()){
 
-            int dayIndex = cursor.getColumnIndex(DBHelper_days.KEY_WEEKDAY);
             int startHIndex = cursor.getColumnIndex(DBHelper_days.KEY_HOURSTART);
             int startMIndex = cursor.getColumnIndex(DBHelper_days.KEY_MINSTART);
             int finishHIndex = cursor.getColumnIndex(DBHelper_days.KEY_HOURSTOP);
@@ -91,15 +90,18 @@ public class change_activity extends AppCompatActivity {
                 if(id==cursor.getInt(idIndex)){
                     try {
                         contentValues.put(DBHelper_days.KEY_NOTE, note.getText().toString());
-                        Log.d("Log_d", "try1");
-                        int a = db.update(DBHelper_days.TABLE_DAYS2, contentValues, DBHelper_days.KEY_ID+"= ?", new String[] {""});
+                        Log.d("Log_d", note.getText().toString());
+                        int a = db.update(DBHelper_days.TABLE_DAYS2, contentValues, DBHelper_days.KEY_ID+"= ?", new String[] {Integer.toString(id)});
                     }catch(Exception e){}
                     contentValues = new ContentValues();
                     try{
                         contentValues.put(DBHelper_days.KEY_DZ, dz.getText().toString());
                         Log.d("Log_d", "try2");
-                        int a = db.update(DBHelper_days.TABLE_DAYS2, contentValues, DBHelper_days.KEY_ID+"= ?", new String[] {""});
+                        int a = db.update(DBHelper_days.TABLE_DAYS2, contentValues, DBHelper_days.KEY_ID + "= ?", new String[] {Integer.toString(id)});
+
                     }catch (Exception e){}
+
+                    finish();
 
                     break;
                 }
@@ -109,6 +111,29 @@ public class change_activity extends AppCompatActivity {
     }
 
     public void delClick(View v){
+
+        dbHelper_days = new DBHelper_days(this);
+        SQLiteDatabase db = dbHelper_days.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        Cursor cursor = db.query(DBHelper_days.TABLE_DAYS2, null, null, null, null, null, null);
+
+        if(cursor.moveToFirst()){
+
+            int idIndex = cursor.getColumnIndex(DBHelper_days.KEY_ID);
+            id = getIntent().getIntExtra("user", 1);
+
+            do{
+                Log.d("Log_d", "read");
+                if(id==cursor.getInt(idIndex)){
+
+                    int a = db.delete(DBHelper_days.TABLE_DAYS2, DBHelper_days.KEY_ID + "= ?", new String[]{Integer.toString(id)});
+
+                    finish();
+
+                    break;
+                }
+            }while(cursor.moveToNext());
+        }
 
     }
 
