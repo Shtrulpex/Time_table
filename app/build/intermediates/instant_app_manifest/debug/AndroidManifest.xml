@@ -19,14 +19,23 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.hard.MainActivity" >
+        <activity android:name="com.example.hard.Sign_in_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.hard.Time_table_create_activity" />
         <activity android:name="com.example.hard.Time_table_activity" />
+        <activity android:name="com.example.hard.reg_activity" />
+        <activity android:name="com.example.hard.change_activity" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.hard.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

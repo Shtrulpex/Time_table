@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DBHelper  extends SQLiteOpenHelper{
+public class DBHelper_auth  extends SQLiteOpenHelper{
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "contactDb";
@@ -14,7 +14,7 @@ public class DBHelper  extends SQLiteOpenHelper{
     public static final String KEY_LOGIN = "login";
     public static final String KEY_PASSWORD = "password";
 
-    public DBHelper(Context context) {
+    public DBHelper_auth(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

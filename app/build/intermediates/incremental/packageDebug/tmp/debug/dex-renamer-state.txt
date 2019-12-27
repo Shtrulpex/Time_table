@@ -1,4 +1,4 @@
-#Sat Nov 30 22:41:23 GMT+03:00 2019
-base.0=D\:\\Samsung\\GitHub\\Time_table\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sat Dec 28 01:14:27 MSK 2019
+base.0=/root/AndroidStudioProjects/Time_table/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
