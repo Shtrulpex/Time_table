@@ -18,9 +18,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hard/change_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hard/change_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +43,19 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/change_activity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
-              <caret line="128" column="131" lean-forward="true" selection-start-line="128" selection-start-column="131" selection-end-line="128" selection-end-column="131" />
+              <caret line="128" column="131" selection-start-line="128" selection-start-column="131" selection-end-line="128" selection-end-column="131" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="173" column="56" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,10 +64,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="173" column="56" lean-forward="true" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
+            <state relative-caret-position="113">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,16 +138,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/time_table_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/change_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/DBHelper_days1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/DBHelper_days.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_create_activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/change_activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="259" />
     <option name="y" value="19" />
     <option name="width" value="1401" />
@@ -289,8 +299,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="1376" height="773" extended-state="7" />
-    <editor active="true" />
+    <frame x="-5" y="0" width="1376" height="773" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13939394" />
@@ -309,7 +318,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50121456" side_tool="true" weight="0.77975136" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32900432" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.24375" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.24375" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32900432" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
@@ -475,16 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="54" column="99" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/reg_activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -518,7 +517,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/change_activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
-          <caret line="128" column="131" lean-forward="true" selection-start-line="128" selection-start-column="131" selection-end-line="128" selection-end-column="131" />
+          <caret line="128" column="131" selection-start-line="128" selection-start-column="131" selection-end-line="128" selection-end-column="131" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -528,7 +527,17 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Time_table_activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="173" column="56" lean-forward="true" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
+          <caret line="173" column="56" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hard/Sign_in_activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
