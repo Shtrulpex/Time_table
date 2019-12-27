@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_create_activity extends AppCompatActivity {
 
-    DBHelper_days1 dbHelper;
+    DBHelper_days dbHelper;
     int weekday= 1;
     int repeat = 0;
     String login;
@@ -109,21 +109,21 @@ public class Time_table_create_activity extends AppCompatActivity {
             String event = ((EditText) findViewById(R.id.event)).getText().toString();
 
 
-            dbHelper = new DBHelper_days1(this);
+            dbHelper = new DBHelper_days(this);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
+            Cursor cursor = db.query(DBHelper_days.TABLE_DAYS2, null, null, null, null, null, null);
 
-            contentValues.put(DBHelper_days1.KEY_LOGIN, login);
-            contentValues.put(DBHelper_days1.KEY_WEEKDAY, weekday);
-            contentValues.put(DBHelper_days1.KEY_HOURSTART, startH);
-            contentValues.put(DBHelper_days1.KEY_MINSTART, startM);
-            contentValues.put(DBHelper_days1.KEY_HOURSTOP, endH);
-            contentValues.put(DBHelper_days1.KEY_MINSTOP, endM);
-            contentValues.put(DBHelper_days1.KEY_EVENT, event);
-            contentValues.put(DBHelper_days1.KEY_REP, repeat);
+            contentValues.put(DBHelper_days.KEY_LOGIN, login);
+            contentValues.put(DBHelper_days.KEY_WEEKDAY, weekday);
+            contentValues.put(DBHelper_days.KEY_HOURSTART, startH);
+            contentValues.put(DBHelper_days.KEY_MINSTART, startM);
+            contentValues.put(DBHelper_days.KEY_HOURSTOP, endH);
+            contentValues.put(DBHelper_days.KEY_MINSTOP, endM);
+            contentValues.put(DBHelper_days.KEY_EVENT, event);
+            contentValues.put(DBHelper_days.KEY_REP, repeat);
 
-            db.insert(DBHelper_days1.TABLE_DAYS, null, contentValues);
+            db.insert(DBHelper_days.TABLE_DAYS2, null, contentValues);
 
             cursor.close();
             finish();

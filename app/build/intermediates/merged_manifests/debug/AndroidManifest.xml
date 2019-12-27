@@ -28,6 +28,7 @@
         <activity android:name="com.example.hard.Time_table_create_activity" />
         <activity android:name="com.example.hard.Time_table_activity" />
         <activity android:name="com.example.hard.reg_activity" />
+        <activity android:name="com.example.hard.change_activity" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"

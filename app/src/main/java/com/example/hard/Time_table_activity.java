@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_activity extends AppCompatActivity {
 
-    DBHelper_days1 dbHelper_days1;
+    DBHelper_days dbHelper_days;
     int weekd = 1;
     String login, event;
     LinearLayout eventSheet, eventSh;
@@ -34,6 +34,17 @@ public class Time_table_activity extends AppCompatActivity {
 
     }
 
+    View.OnClickListener change = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            Intent i = new Intent(Time_table_activity.this, change_activity.class);
+            i.putExtra("user", v.getId());
+            startActivity(i);
+
+        }
+    };
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -42,54 +53,7 @@ public class Time_table_activity extends AppCompatActivity {
 
         create();
     }
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {Log.d("Log_d", "+"+v.getId());
-            switch(v.getId()){
-                case R.id.mn:
-                    break;
-                case R.id.tu:
-                    break;
-                case R.id.we:
-                    break;
-                case R.id.th:
-                    break;
-                case R.id.fr:
-                    break;
-                case R.id.st:
-                    break;
-                case R.id.sn:
-                    break;
-                default:
-                    login = getIntent().getStringExtra("login");
 
-                    try{
-                        String et = ((EditText)findViewById((v.getId())*100000)).getText().toString();
-
-                        dbHelper_days1 = new DBHelper_days1(Time_table_activity.this);
-                        SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
-                        ContentValues contentValues = new ContentValues();
-                        Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
-
-                        int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
-                        int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
-                        int idIndex = cursor.getColumnIndex(DBHelper_days1.KEY_ID);
-
-                        if(cursor.moveToFirst()) {
-                            do {
-                                if (login.equals(cursor.getString(logIndex)) && weekd == cursor.getInt(dayIndex) && cursor.getInt(idIndex)==v.getId()) {
-                                    contentValues.put(DBHelper_days1.KEY_NOTE, et);
-                                    int a = db.update(DBHelper_days1.TABLE_DAYS, contentValues, DBHelper_days1.KEY_ID+"= ?", new String[] {"12"});
-                                }
-                            } while (cursor.moveToNext());
-                        }
-                    }catch (Exception e){
-                        Toast.makeText(Time_table_activity.this, "Поле пустое", Toast.LENGTH_LONG).show();
-                    }
-                    break;
-            }
-        }
-    };
     public void mn(View v){
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
@@ -154,26 +118,24 @@ public class Time_table_activity extends AppCompatActivity {
     void create(){
         try {
             eventSheet = (LinearLayout) findViewById(R.id.eventSheet);
-            dbHelper_days1 = new DBHelper_days1(this);
-            SQLiteDatabase db = dbHelper_days1.getWritableDatabase();
+            dbHelper_days = new DBHelper_days(this);
+            SQLiteDatabase db = dbHelper_days.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            Cursor cursor = db.query(DBHelper_days1.TABLE_DAYS, null, null, null, null, null, null);
-
+            Cursor cursor = db.query(DBHelper_days.TABLE_DAYS2, null, null, null, null, null, null);
 
             login = getIntent().getStringExtra("login");
 
-
             if (cursor.moveToFirst()) {
                 Log.d("Log_d",login);
-                int logIndex = cursor.getColumnIndex(DBHelper_days1.KEY_LOGIN);
-                int dayIndex = cursor.getColumnIndex(DBHelper_days1.KEY_WEEKDAY);
-                int startHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTART);
-                int startMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTART);
-                int finishHIndex = cursor.getColumnIndex(DBHelper_days1.KEY_HOURSTOP);
-                int finishMIndex = cursor.getColumnIndex(DBHelper_days1.KEY_MINSTOP);
-                int eventIndex = cursor.getColumnIndex(DBHelper_days1.KEY_EVENT);
-                int idIndex = cursor.getColumnIndex(DBHelper_days1.KEY_ID);
-                int noteIndex = cursor.getColumnIndex(DBHelper_days1.KEY_NOTE);
+                int logIndex = cursor.getColumnIndex(DBHelper_days.KEY_LOGIN);
+                int dayIndex = cursor.getColumnIndex(DBHelper_days.KEY_WEEKDAY);
+                int startHIndex = cursor.getColumnIndex(DBHelper_days.KEY_HOURSTART);
+                int startMIndex = cursor.getColumnIndex(DBHelper_days.KEY_MINSTART);
+                int finishHIndex = cursor.getColumnIndex(DBHelper_days.KEY_HOURSTOP);
+                int finishMIndex = cursor.getColumnIndex(DBHelper_days.KEY_MINSTOP);
+                int eventIndex = cursor.getColumnIndex(DBHelper_days.KEY_EVENT);
+                int idIndex = cursor.getColumnIndex(DBHelper_days.KEY_ID);
+                int noteIndex = cursor.getColumnIndex(DBHelper_days.KEY_NOTE);
 
                 Log.d("Log_d", "working");
                 do {
@@ -190,28 +152,30 @@ public class Time_table_activity extends AppCompatActivity {
                         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                         LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
                         TextView tw = new TextView(this);
-                        EditText et = new EditText(this);
-                        Button bt = new Button(this);
 
-                        tw.setText(time()+"\n"+event);
+                        tw.setText(time());
+
+                        tw.setTextSize(24);
+                        eventSh = new LinearLayout(this);
+                        eventSh.setOrientation(LinearLayout.VERTICAL);
+
+                        eventSheet.addView(eventSh, llParams);
+                        eventSh.setOnClickListener(change);
+                        eventSh.addView(tw, lParams);
+                        eventSh.setId(id);
+                        tw = new TextView(this);
+                        tw.setText(event);
+                        tw.setTextSize(20);
+                        eventSh.addView(tw, lParams);
+
                         try{
-                            tw.setText(time()+"\n"+event+"\n\n"+"Заметка:"+"\n"+cursor.getString(noteIndex));
-                        }catch (Exception e){
+                            tw = new TextView(this);
+                            tw.setText(cursor.getString(noteIndex));
+                            tw.setTextSize(16);
+                            eventSh.addView(tw, lParams);
+                        }catch(Exception e){
 
                         }
-
-                        et.setId(id);
-                        lParams.weight = 1;
-
-                        bt.setText("Save");
-                        bt.setId(100000*id);
-
-                        eventSh = new LinearLayout(this);
-                        eventSh.setOrientation(LinearLayout.HORIZONTAL);
-                        eventSheet.addView(eventSh, llParams);
-                        eventSh.addView(tw, lParams);
-                        eventSh.addView(et, lParams);
-                        eventSh.addView(bt, lParams);
 
                     }
                 } while (cursor.moveToNext());

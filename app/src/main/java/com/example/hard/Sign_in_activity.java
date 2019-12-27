@@ -53,7 +53,6 @@ public class Sign_in_activity extends AppCompatActivity {
         dbHelper = new DBHelper_auth(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.query(DBHelper_auth.TABLE_CONTACTS, null, null, null, null, null, null);
-
         if (cursor.moveToFirst()) {
 
             int loginIndex = cursor.getColumnIndex(DBHelper_auth.KEY_LOGIN);

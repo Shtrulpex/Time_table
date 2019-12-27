@@ -1068,6 +1068,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id DZ
 id FUNCTION
 id META
 id SHIFT
@@ -1130,6 +1131,7 @@ id all
 id always
 id async
 id auto
+id back
 id barrier
 id beginning
 id blocking
@@ -1164,6 +1166,7 @@ id custom
 id customPanel
 id decor_content_parent
 id default_activity_button
+id delete
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1229,6 +1232,7 @@ id navigation_header_container
 id never
 id none
 id normal
+id note
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1255,6 +1259,7 @@ id ret
 id right
 id right_icon
 id right_side
+id save
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1318,8 +1323,11 @@ id textView11
 id textView12
 id textView13
 id textView16
+id textView2
 id textView6
+id textView7
 id textView8
+id textView9
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1406,6 +1414,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout change_activity
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
