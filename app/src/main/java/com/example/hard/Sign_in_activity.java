@@ -27,6 +27,7 @@ public class Sign_in_activity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        setContentView(R.layout.activity_main);
         EditText log = (EditText) findViewById(R.id.log);
         EditText pass = (EditText) findViewById(R.id.pass);
         TextView uncorrect = (TextView) findViewById(R.id.uncorrect);

@@ -50,7 +50,9 @@ public class Time_table_activity extends AppCompatActivity {
         super.onStart();
         Log.d("Log_d", "hi");
         setContentView(R.layout.time_table_activity);
-
+        TextView day = (TextView)findViewById(R.id.weekd);
+        day.setText("Понедельник");
+        weekd = 1;
         create();
     }
 
@@ -112,7 +114,19 @@ public class Time_table_activity extends AppCompatActivity {
     }
 
     public String time(){
-        return startH + ":" + startM + "-" + finishH + ":" + finishM;
+        if(startM/10==0){
+            if(finishM/10==0){
+                return startH+":0"+startM+"-"+finishH+":0"+finishM;
+            }else{
+                return startH+":0"+startM+"-"+finishH+":"+finishM;
+            }
+        }else{
+            if (finishM/10==0){
+                return startH+":"+startM+"-"+finishH+":0"+finishM;
+            }else{
+                return startH+":"+startM+"-"+finishH+":"+finishM;
+            }
+        }
     }
 
     void create(){
