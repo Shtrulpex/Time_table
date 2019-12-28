@@ -54,6 +54,7 @@ public class Time_table_create_activity extends AppCompatActivity {
         TextView weekd = (TextView)findViewById(R.id.textView6);
         weekday = 1;
         weekd.setText("Понедельник");
+        
     }
 
     public void w2(View v){
@@ -99,6 +100,7 @@ public class Time_table_create_activity extends AppCompatActivity {
     public void onSubButtonClick(View v){
 
         login = getIntent().getStringExtra("login");
+        point:
         try {
 
 
@@ -108,6 +110,20 @@ public class Time_table_create_activity extends AppCompatActivity {
             int endM = Integer.parseInt(((EditText) findViewById(R.id.min_end)).getText().toString());
             String event = ((EditText) findViewById(R.id.event)).getText().toString();
 
+            if(startH>23||endH>23||startM>59||endM>59){
+                Toast.makeText(this, "Такого времени не существует", Toast.LENGTH_LONG).show();
+                break point;
+            }
+
+            if(startH>endH){
+                Toast.makeText(this, "У нас время идётв другую сторону", Toast.LENGTH_LONG).show();
+                break point;
+            }
+
+            if(startH==endH && startM>endM){
+                Toast.makeText(this, "У нас время идётв другую сторону", Toast.LENGTH_LONG).show();
+                break point;
+            }
 
             dbHelper = new DBHelper_days(this);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
