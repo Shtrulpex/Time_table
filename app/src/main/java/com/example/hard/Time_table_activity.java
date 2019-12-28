@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,15 +24,13 @@ public class Time_table_activity extends AppCompatActivity {
     String login, event;
     LinearLayout eventSheet, eventSh;
     int startH, finishH, startM, finishM;
+    Button mn, tu, we, th, fr, st, sn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_table_activity);
-
-
-
     }
 
     View.OnClickListener change = new View.OnClickListener() {
@@ -53,13 +52,39 @@ public class Time_table_activity extends AppCompatActivity {
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Понедельник");
         weekd = 1;
+        mn = (Button)findViewById(R.id.mn);
+        tu = (Button)findViewById(R.id.tu);
+        we = (Button)findViewById(R.id.we);
+        th = (Button)findViewById(R.id.th);
+        fr = (Button)findViewById(R.id.fr);
+        st = (Button)findViewById(R.id.st);
+        sn = (Button)findViewById(R.id.sn);
+        mn.setTextColor(Color.GREEN);
         create();
+    }
+
+    void init(){
+        mn = (Button)findViewById(R.id.mn);
+        tu = (Button)findViewById(R.id.tu);
+        we = (Button)findViewById(R.id.we);
+        th = (Button)findViewById(R.id.th);
+        fr = (Button)findViewById(R.id.fr);
+        st = (Button)findViewById(R.id.st);
+        sn = (Button)findViewById(R.id.sn);
     }
 
     public void mn(View v){
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Понедельник");
+        init();
+        mn.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         weekd = 1;
         create();
     }
@@ -69,6 +94,14 @@ public class Time_table_activity extends AppCompatActivity {
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Вторник");
         weekd = 2;
+        init();
+        tu.setTextColor(Color.GREEN);
+        mn.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         create();
     }
 
@@ -77,6 +110,14 @@ public class Time_table_activity extends AppCompatActivity {
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Среда");
         weekd = 3;
+        init();
+        we.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        mn.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         create();
     }
 
@@ -85,6 +126,14 @@ public class Time_table_activity extends AppCompatActivity {
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Четверг");
+        init();
+        th.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        mn.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         weekd = 4;
         create();
     }
@@ -93,6 +142,14 @@ public class Time_table_activity extends AppCompatActivity {
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Пятница");
+        init();
+        fr.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        mn.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         weekd = 5;
         create();
     }
@@ -101,6 +158,14 @@ public class Time_table_activity extends AppCompatActivity {
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Суббота");
+        init();
+        st.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        mn.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        sn.setTextColor(Color.BLACK);
         weekd = 6;
         create();
     }
@@ -109,6 +174,14 @@ public class Time_table_activity extends AppCompatActivity {
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Воскресенье");
+        init();
+        sn.setTextColor(Color.GREEN);
+        tu.setTextColor(Color.BLACK);
+        we.setTextColor(Color.BLACK);
+        th.setTextColor(Color.BLACK);
+        fr.setTextColor(Color.BLACK);
+        st.setTextColor(Color.BLACK);
+        mn.setTextColor(Color.BLACK);
         weekd = 7;
         create();
     }
