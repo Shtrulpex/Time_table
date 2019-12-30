@@ -7,9 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Time_table_create_activity extends AppCompatActivity {
 
     DBHelper_days dbHelper;
-    int weekday= 1;
     int repeat = 0;
     int k=0;
     String login;

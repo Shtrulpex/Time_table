@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Time_table_activity extends AppCompatActivity {
@@ -61,6 +64,21 @@ public class Time_table_activity extends AppCompatActivity {
         sn = (Button)findViewById(R.id.sn);
         mn.setTextColor(Color.GREEN);
         create();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_1, menu);
+
+        return true;
+    }
+
+    public void onSettingsClick(MenuItem item){
+        login = getIntent().getStringExtra("login");
+        Intent i = new Intent(Time_table_activity.this, settings_activity.class);
+        i.putExtra("login", login);
+        startActivity(i);
     }
 
     void init(){
@@ -122,7 +140,6 @@ public class Time_table_activity extends AppCompatActivity {
     }
 
     public void th(View v){
-        setContentView(R.layout.time_table_activity);
         setContentView(R.layout.time_table_activity);
         TextView day = (TextView)findViewById(R.id.weekd);
         day.setText("Четверг");
