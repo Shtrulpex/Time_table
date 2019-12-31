@@ -24,6 +24,7 @@
         <activity android:name=".chanl_activity"/>
         <activity android:name=".chanp_activity"/>
         <activity android:name=".delu_activity"/>
+        <activity android:name=".admin_activity"/>
     </application>
 
 </manifest>

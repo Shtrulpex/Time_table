@@ -303,7 +303,8 @@ public class Time_table_activity extends AppCompatActivity {
     }
 
     public void onAdminClick(MenuItem item){
-
+        Intent i = new Intent(Time_table_activity.this, admin_activity.class);
+        startActivity(i);
     }
 
 }

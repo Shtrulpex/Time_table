@@ -1141,6 +1141,8 @@ id button
 id button10
 id button11
 id button12
+id button13
+id button14
 id button18
 id button2
 id button3
@@ -1183,6 +1185,7 @@ id dimensions
 id direct
 id disableHome
 id editText
+id editText2
 id edit_query
 id end
 id enter
@@ -1368,6 +1371,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id users
 id view_offset_helper
 id visible
 id w1
@@ -1436,6 +1440,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin
 layout activity_chanl
 layout activity_chanp
 layout activity_delu

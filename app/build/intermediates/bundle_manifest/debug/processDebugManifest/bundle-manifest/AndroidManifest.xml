@@ -33,6 +33,7 @@
         <activity android:name="com.example.hard.chanl_activity" />
         <activity android:name="com.example.hard.chanp_activity" />
         <activity android:name="com.example.hard.delu_activity" />
+        <activity android:name="com.example.hard.admin_activity" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
