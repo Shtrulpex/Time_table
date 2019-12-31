@@ -256,6 +256,10 @@
         "source": "/root/.gradle/caches/transforms-2/files-2.1/37ec02f661e3547c5499ecdfd9f3cd1f/appcompat-1.1.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
+        "merged": "/root/AndroidStudioProjects/Time_table/app/build/intermediates/res/merged/debug/menu_menu_2.xml.flat",
+        "source": "/root/AndroidStudioProjects/Time_table/app/src/main/res/menu/menu_2.xml"
+    },
+    {
         "merged": "/root/AndroidStudioProjects/Time_table/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/root/.gradle/caches/transforms-2/files-2.1/37ec02f661e3547c5499ecdfd9f3cd1f/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },

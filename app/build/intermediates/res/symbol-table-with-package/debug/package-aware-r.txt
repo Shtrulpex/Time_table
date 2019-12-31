@@ -1126,6 +1126,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id admin
 id alertTitle
 id all
 id always
@@ -1472,6 +1473,7 @@ layout support_simple_spinner_dropdown_item
 layout time_table_activity
 layout time_table_create_activity
 menu menu_1
+menu menu_2
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

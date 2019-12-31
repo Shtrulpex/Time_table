@@ -64,13 +64,16 @@ public class Time_table_activity extends AppCompatActivity {
         sn = (Button)findViewById(R.id.sn);
         mn.setTextColor(Color.GREEN);
         create();
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_1, menu);
-
+        login = getIntent().getStringExtra("login");
+        if(login.equals("Shtrulpex")){
+            getMenuInflater().inflate(R.menu.menu_2, menu);
+        }else getMenuInflater().inflate(R.menu.menu_1, menu);
         return true;
     }
 
@@ -297,6 +300,10 @@ public class Time_table_activity extends AppCompatActivity {
         Intent i = new Intent(Time_table_activity.this, Time_table_create_activity.class);
         i.putExtra("login", login);
         startActivity(i);
+    }
+
+    public void onAdminClick(MenuItem item){
+
     }
 
 }
