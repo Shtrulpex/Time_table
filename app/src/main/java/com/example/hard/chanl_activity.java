@@ -35,7 +35,7 @@ public class chanl_activity extends AppCompatActivity {
 
         point:try{
             log = et.getText().toString();
-            if(log==null||log==""){
+            if(log==null||log==""||log.length()<1){
                 Toast.makeText(this, "Поле не заполнено", Toast.LENGTH_LONG).show();
                 break point;
             }

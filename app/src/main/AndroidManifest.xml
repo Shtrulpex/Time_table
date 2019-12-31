@@ -22,6 +22,8 @@
         <activity android:name=".change_activity"/>
         <activity android:name=".settings_activity"/>
         <activity android:name=".chanl_activity"/>
+        <activity android:name=".chanp_activity"/>
+        <activity android:name=".delu_activity"/>
     </application>
 
 </manifest>

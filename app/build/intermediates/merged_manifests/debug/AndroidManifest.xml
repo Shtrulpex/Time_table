@@ -31,6 +31,8 @@
         <activity android:name="com.example.hard.change_activity" />
         <activity android:name="com.example.hard.settings_activity" />
         <activity android:name="com.example.hard.chanl_activity" />
+        <activity android:name="com.example.hard.chanp_activity" />
+        <activity android:name="com.example.hard.delu_activity" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"

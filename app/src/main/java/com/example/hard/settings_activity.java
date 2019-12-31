@@ -31,13 +31,15 @@ public class settings_activity extends AppCompatActivity {
     }
 
     public void chanp(View v){
-        //Intent i = new Intent(settings_activity.this, chanp_activity.class);
-        //startActivity(i);
+        Intent i = new Intent(settings_activity.this, chanp_activity.class);
+        i.putExtra("login", getIntent().getStringExtra("login"));
+        startActivity(i);
     }
 
     public void delu(View v){
-        //Intent i = new Intent(settings_activity.this, delu_activity.class);
-        //startActivity(i);
+        Intent i = new Intent(settings_activity.this, delu_activity.class);
+        i.putExtra("login", getIntent().getStringExtra("login"));
+        startActivity(i);
     }
 
 }
