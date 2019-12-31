@@ -7,11 +7,6 @@
     tools:context=".Time_table_create_activity">
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,7 +103,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/w1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -116,7 +111,7 @@
             android:onClick="w1"/>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/w2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,7 +119,7 @@
             android:onClick="w2"/>
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/w3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -132,7 +127,7 @@
             android:onClick="w3"/>
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/w4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -140,7 +135,7 @@
             android:onClick="w4"/>
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/w5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -148,7 +143,7 @@
             android:onClick="w5"/>
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/w6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -156,7 +151,7 @@
             android:onClick="w6"/>
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/w7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

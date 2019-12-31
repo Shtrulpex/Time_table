@@ -1138,6 +1138,8 @@ id blocking
 id bottom
 id button
 id button10
+id button11
+id button12
 id button18
 id button2
 id button3
@@ -1152,6 +1154,9 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id chanpass1
+id chanpass2
+id chanpassp
 id checkbox
 id checked
 id chronometer
@@ -1176,6 +1181,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_query
 id end
 id enter
@@ -1218,6 +1224,7 @@ id listMode
 id list_item
 id log
 id log_uncor
+id login_equ
 id masked
 id message
 id middle
@@ -1246,6 +1253,7 @@ id parentPanel
 id parent_matrix
 id pass
 id pass_uncorr
+id passworddel
 id percent
 id pin
 id progress_circular
@@ -1281,6 +1289,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id settings
 id shortcut
 id showCustom
 id showHome
@@ -1319,11 +1328,17 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView10
 id textView11
 id textView12
 id textView13
+id textView14
+id textView15
 id textView16
 id textView2
+id textView3
+id textView4
+id textView5
 id textView6
 id textView7
 id textView8
@@ -1354,6 +1369,13 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id w1
+id w2
+id w3
+id w4
+id w5
+id w6
+id w7
 id we
 id weekd
 id withText
@@ -1413,7 +1435,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_chanl
+layout activity_chanp
+layout activity_delu
 layout activity_main
+layout activity_settings
 layout change_activity
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1445,6 +1471,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout time_table_activity
 layout time_table_create_activity
+menu menu_1
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

@@ -20,6 +20,10 @@
         <activity android:name=".Time_table_activity" />
         <activity android:name=".reg_activity" />
         <activity android:name=".change_activity"/>
+        <activity android:name=".settings_activity"/>
+        <activity android:name=".chanl_activity"/>
+        <activity android:name=".chanp_activity"/>
+        <activity android:name=".delu_activity"/>
     </application>
 
 </manifest>

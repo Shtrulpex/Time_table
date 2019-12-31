@@ -11,7 +11,7 @@
 9-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:5:5-23:19
+11-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:5:5-27:19
 12        android:allowBackup="true"
 12-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -54,17 +54,29 @@
 31        <activity android:name="com.example.hard.change_activity" />
 31-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:22:9-52
 31-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:22:19-50
-32
-33        <provider
-33-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
-34            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-34-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
-35            android:authorities="com.example.hard.lifecycle-process"
-35-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
-36            android:exported="false"
-36-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
-37            android:multiprocess="true" />
-37-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
-38    </application>
-39
-40</manifest>
+32        <activity android:name="com.example.hard.settings_activity" />
+32-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:23:9-54
+32-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:23:19-52
+33        <activity android:name="com.example.hard.chanl_activity" />
+33-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:24:9-51
+33-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:24:19-49
+34        <activity android:name="com.example.hard.chanp_activity" />
+34-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:25:9-51
+34-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:25:19-49
+35        <activity android:name="com.example.hard.delu_activity" />
+35-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:26:9-50
+35-->/root/AndroidStudioProjects/Time_table/app/src/main/AndroidManifest.xml:26:19-48
+36
+37        <provider
+37-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+38            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+38-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+39            android:authorities="com.example.hard.lifecycle-process"
+39-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+40            android:exported="false"
+40-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+41            android:multiprocess="true" />
+41-->[androidx.lifecycle:lifecycle-process:2.1.0] /root/.gradle/caches/transforms-2/files-2.1/c75b512c68f7bb7a7c5a931aae563be5/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+42    </application>
+43
+44</manifest>
